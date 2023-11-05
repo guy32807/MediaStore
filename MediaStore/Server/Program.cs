@@ -1,4 +1,5 @@
 global using MediaStore.Server.Data;
+global using MediaStore.Server.Services.ProductService;
 global using MediaStore.Shared;
 global using Microsoft.EntityFrameworkCore;
 
@@ -13,6 +14,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddScoped<IProductService, ProductService>();
 
 
 var app = builder.Build();
